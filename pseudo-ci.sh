@@ -23,8 +23,11 @@ git checkout origin/master
 
 ${basedir}/blackbox.go.macos cipostdeploy ${basedir}/SECRET_KEY.txt
 
+export JAVA_HOME=/usr/local/opt/openjdk@11/libexec/openjdk.jdk/Contents/Home
+
 FLT=${basedir}/flutter/bin/flutter ./hbh_app/_tools/release.sh ${target}
 
+popd
 
 rm -rf "${wd}"
 
