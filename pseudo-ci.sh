@@ -17,9 +17,13 @@ fi
 pushd ${wd}
 
 git fetch --all
-git reset --hard
+if test -z "${ref:-}" ; then
+    git reset --hard
+else
+    git reset --hard "${ref:-}"
+fi
 git clean -qxfd .
-git checkout origin/master
+#git checkout origin/master
 
 ${basedir}/blackbox.go.macos cipostdeploy ${basedir}/SECRET_KEY.txt
 
