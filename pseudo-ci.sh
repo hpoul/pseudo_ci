@@ -5,7 +5,7 @@ set -xeu
 target=$1
 
 dirname=hbh_$$
-repo=hpoul/hbh
+repo=codeuxdesign/hbh
 wd=wd/wd_${dirname}
 
 basedir=`pwd`
